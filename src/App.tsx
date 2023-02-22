@@ -11,7 +11,6 @@ function App() {
     function addCount() {
         setCounter(counter + 1)
     }
-
     function resetCount() {
         setCounter(0)
     }
@@ -24,7 +23,7 @@ function App() {
                 <div className={'buttoms'}>
                     <Button title={'inc'} callback={addCount} disabled={counter===maxValue}/>
                     <Button title={'reset'} callback={resetCount} disabled={counter===minValue}/>
-                    <Button title={'set'} callback={resetCount} disabled={counter===minValue}/>
+                    <Button title={'set'} callback={()=>{}} disabled={true}/>
                 </div>
             </div>
         </div>
