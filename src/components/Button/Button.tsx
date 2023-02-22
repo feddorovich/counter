@@ -1,17 +1,26 @@
 import React from 'react';
+import s from './Button.module.css'
 
 type PropsType = {
     title: string
     callback: () => void
+    disabled?: boolean
 }
 
 export const Button: React.FC<PropsType> = (props) => {
 
     const onClickHandler = () => {
-      props.callback()
+        props.callback()
     }
 
     return (
-            <button onClick={onClickHandler}>{props.title}</button>
+        <div>
+            <button
+                className={s.button}
+                onClick={onClickHandler}
+                disabled={props.disabled}>
+                {props.title}
+            </button>
+        </div>
     );
 };
