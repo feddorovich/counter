@@ -16,7 +16,7 @@
     width: 38vmin;
     height: 38vmin;
     background-color: #282c34;
-    border: 1px solid aqua;
+    border: 1px solid #00BFFF;
     border-radius: 5px;
 }
 
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: #00BFFF;
     width: 36vmin;
     height: 26vmin;
     border-radius: 5px;
@@ -39,7 +39,7 @@
     background-color: #282c34;
     width: 36vmin;
     height: 9vmin;
-    border: 1px solid aqua;
+    border: 1px solid #00BFFF;
     border-radius: 5px;
     margin-top: 1vmin;
 }

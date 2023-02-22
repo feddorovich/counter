@@ -5,12 +5,13 @@
     border: none;
     font-size: 3vmin;
     font-weight: 600;
-    background-color: aqua;
+    background-color: #00BFFF;
     margin: 5px;
+    cursor: pointer;
 }
 
 .button:hover {
-    background-color: rgba(0, 255, 255, 0.9);
+    background-color: #1ec9fd;
 }
 
 .button:active {
@@ -23,6 +24,7 @@
 
 .button:disabled:hover {
     opacity: 0.5;
-    background-color: aqua;
+    background-color: #00BFFF;
+    cursor: default;
 }
 
