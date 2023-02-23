@@ -49,3 +49,9 @@
     color: red;
     font-weight: bold;
 }
+
+.info {
+    color: white;
+    font-size: 2vmin;
+    margin-bottom: 1vmin;
+}

@@ -36,6 +36,7 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
+            <span className={'info'}>Max value: {maxValue}</span>
             {settings ? <Settings openSettings={openSettings}
                                   setCounter={setCounter}
                                   maxValue={maxValue}
