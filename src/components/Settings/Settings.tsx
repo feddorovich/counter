@@ -4,17 +4,24 @@ import s from './Settings.module.css'
 
 type SettingsPropsType = {
     openSettings: () => void
-    maxValue: any
-    setMaxValue: (max: any) => void
+    setCounter: (counter: number) => void
+    maxValue: number
+    setMaxValue: (max: number) => void
+    minValue: number
+    setMinValue: (min: number) => void
 }
 
 export const Settings: React.FC<SettingsPropsType> = (props) => {
 
     const onClickHandler = () => {
+        props.setCounter(Number(props.minValue))
         props.openSettings()
     }
     const onMaxChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.setMaxValue(e.currentTarget.value)
+        props.setMaxValue(Number(e.currentTarget.value))
+    }
+    const onMinChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        props.setMinValue(Number(e.currentTarget.value))
     }
     return (
         <div>
@@ -32,6 +39,8 @@ export const Settings: React.FC<SettingsPropsType> = (props) => {
                         <tr>
                             <td>start value:</td>
                             <td><input className={s.input}
+                                       value={props.minValue}
+                                       onChange={onMinChangeHandler}
                                        type="number"/></td>
                         </tr>
                         </tbody>

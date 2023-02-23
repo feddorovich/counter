@@ -33,8 +33,12 @@ const App:React.FC = () => {
     return (
         <div className="App">
             { settings ? <Settings openSettings={openSettings}
+                                   setCounter={setCounter}
                                    maxValue={maxValue}
-                                   setMaxValue={setMaxValue}/> :
+                                   setMaxValue={setMaxValue}
+                                   minValue={minValue}
+                                   setMinValue={setMinValue}
+                /> :
             <div className={'counter'}>
                 <div className={error ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}</div>
                 <div className={'buttoms'}>
