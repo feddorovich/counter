@@ -3,10 +3,11 @@ import './App.css';
 import {Button} from "./components/Button/Button";
 import {Settings} from "./components/Settings/Settings";
 
-function App() {
+const App:React.FC = () => {
 
     let [counter, setCounter] = useState<number>(0)
     let [settings, setSettings] = useState(false)
+    console.log(settings)
     let minValue = 0
     let maxValue = 5
 
@@ -16,11 +17,14 @@ function App() {
     function resetCount() {
         setCounter(0)
     }
+    function openSettings() {
+        setSettings(!settings)
+    }
 
 
     return (
         <div className="App">
-            { settings ? <Settings/> :
+            { settings ? <Settings openSettings={openSettings}/> :
             <div className={'counter'}>
                 <div className={counter===maxValue ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}</div>
                 <div className={'buttoms'}>
