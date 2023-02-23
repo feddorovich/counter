@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Button} from "./components/Button/Button";
 import {Settings} from "./components/Settings/Settings";
@@ -11,15 +11,17 @@ const App: React.FC = () => {
     let [minValue, setMinValue] = useState(0)
     let [error, setError] = useState(false)
 
-
-    function addCount() {
+    useEffect(()=>{
         if (counter < maxValue) {
             setError(false)
-            setCounter(counter + 1)
         }
-        if (counter === maxValue - 1) {
+        if (counter === maxValue) {
             setError(true)
         }
+    }, [counter])
+
+    function addCount() {
+            setCounter(counter + 1)
     }
 
     function resetCount() {

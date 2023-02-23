@@ -21,6 +21,7 @@
     border-radius: 5px;
     font-size: 4vmin;
     color: #00BFFF;
+    user-select: none;
 }
 
 .buttoms {
@@ -51,4 +52,9 @@ table {
 
 .input:focus {
     outline: none;
+}
+
+.inputError {
+    border: 3px solid #FF0000;
+    background-color: #ffacac;
 }
