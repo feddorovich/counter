@@ -15,11 +15,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #00BFFF;
+    background-color: #282c34;
     width: 36vmin;
     height: 26vmin;
     border-radius: 5px;
     font-size: 4vmin;
+    color: #00BFFF;
 }
 
 .buttoms {
@@ -36,15 +37,18 @@
 
 table {
     width: 100%;
-    padding: 1vmin;
+    padding: 0.5vmin;
 }
 
 .input {
-    border: 1px solid #D1D1D1;
+    border: 3px solid #00BFFF;
     border-radius: 5px;
-    width: 6vmin;
-    height: 3vmin;
-    padding: 7px 11px;
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    width: 12vmin;
+    height: 4vmin;
+    font-size: 3vmin;
+    text-align: center;
+}
+
+.input:focus {
+    outline: none;
 }

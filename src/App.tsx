@@ -7,28 +7,38 @@ const App:React.FC = () => {
 
     let [counter, setCounter] = useState<number>(0)
     let [settings, setSettings] = useState(false)
-    console.log(settings)
-    let minValue = 0
-    let maxValue = 5
+    let [maxValue, setMaxValue] = useState(5)
+    let [minValue, setMinValue] = useState(0)
+    let [error, setError] = useState(false)
+
 
     function addCount() {
-        setCounter(counter + 1)
+        if (counter < maxValue) {
+            setError(false)
+            setCounter(counter + 1)
+        } else {
+            setError(true)
+        }
+
     }
     function resetCount() {
+        setError(false)
         setCounter(0)
     }
     function openSettings() {
+        setError(false)
         setSettings(!settings)
     }
 
-
     return (
         <div className="App">
-            { settings ? <Settings openSettings={openSettings}/> :
+            { settings ? <Settings openSettings={openSettings}
+                                   maxValue={maxValue}
+                                   setMaxValue={setMaxValue}/> :
             <div className={'counter'}>
-                <div className={counter===maxValue ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}</div>
+                <div className={error ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}</div>
                 <div className={'buttoms'}>
-                    <Button title={'inc'} callback={addCount} disabled={counter===maxValue}/>
+                    <Button title={'inc'} callback={addCount} disabled={error}/>
                     <Button title={'reset'} callback={resetCount} disabled={counter===minValue}/>
                     <Button title={'set'} callback={()=>{setSettings(true)}}/>
                 </div>
