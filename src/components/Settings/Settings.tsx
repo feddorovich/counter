@@ -15,9 +15,13 @@ export const Settings: React.FC<SettingsPropsType> = (props) => {
 
     let [error, setError] = useState(false)
 
-    const onClickHandler = () => {
+    const onSetClickHandler = () => {
         props.setCounter(+props.minValue)
         props.openSettings()
+    }
+    const onResetClickHandler = () => {
+        props.setMaxValue(5)
+        props.setMinValue(0)
     }
     const onMaxChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (+e.currentTarget.value < props.minValue) {
@@ -62,7 +66,11 @@ export const Settings: React.FC<SettingsPropsType> = (props) => {
                     </table>
                 </div>
                 <div className={'buttoms'}>
-                    <Button title={'set'} callback={onClickHandler}/>
+                    <Button title={'set'} callback={onSetClickHandler}/>
+                    <Button title={'reset'}
+                            callback={onResetClickHandler}
+                            disabled={props.maxValue === 5 && props.minValue === 0}
+                    />
                 </div>
             </div>
         </div>

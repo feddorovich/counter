@@ -11,7 +11,7 @@ const App: React.FC = () => {
     let [minValue, setMinValue] = useState(0)
     let [error, setError] = useState(false)
 
-    useEffect(()=>{
+    useEffect(() => {
         if (counter < maxValue) {
             setError(false)
         }
@@ -21,7 +21,7 @@ const App: React.FC = () => {
     }, [counter])
 
     function addCount() {
-            setCounter(counter + 1)
+        setCounter(counter + 1)
     }
 
     function resetCount() {
@@ -36,7 +36,7 @@ const App: React.FC = () => {
 
     return (
         <div className="App">
-            <span className={'info'}>Max value: {maxValue}</span>
+            <span className={'info'}>MAX: {maxValue} </span>
             {settings ? <Settings openSettings={openSettings}
                                   setCounter={setCounter}
                                   maxValue={maxValue}
@@ -45,7 +45,8 @@ const App: React.FC = () => {
                                   setMinValue={setMinValue}
                 /> :
                 <div className={'counter'}>
-                    <div className={error ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}</div>
+                    <div className={error ? 'numArea' + ' ' + 'maxValue' : 'numArea'}>{counter}
+                    </div>
                     <div className={'buttoms'}>
                         <Button title={'inc'} callback={addCount} disabled={error}/>
                         <Button title={'reset'} callback={resetCount} disabled={counter === minValue}/>
