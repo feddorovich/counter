@@ -22,6 +22,7 @@ export const Settings: React.FC<SettingsPropsType> = (props) => {
     const onResetClickHandler = () => {
         props.setMaxValue(5)
         props.setMinValue(0)
+        setError(false)
     }
     const onMaxChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (+e.currentTarget.value < props.minValue) {

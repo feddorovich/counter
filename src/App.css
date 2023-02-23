@@ -33,6 +33,10 @@
     font-size: 15vmin;
 }
 
+.numArea:hover {
+    background-color: #1ec9fd;
+}
+
 .buttoms {
     display: flex;
     justify-content: center;
