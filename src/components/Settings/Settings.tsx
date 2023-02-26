@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import {Button} from "../Button/Button";
 import s from './Settings.module.css'
 
@@ -12,6 +12,20 @@ type SettingsPropsType = {
 }
 
 export const Settings: React.FC<SettingsPropsType> = (props) => {
+
+    useEffect(() => {
+        let localStorageMaxValue = localStorage.getItem('maxValue')
+        let localStorageMinValue = localStorage.getItem('minValue')
+        if (localStorageMaxValue && localStorageMinValue) {
+            props.setMaxValue(JSON.parse(localStorageMaxValue))
+            props.setMinValue(JSON.parse(localStorageMinValue))
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('maxValue', JSON.stringify(props.maxValue))
+        localStorage.setItem('minValue', JSON.stringify(props.minValue))
+    }, [props.maxValue, props.minValue])
 
     let [error, setError] = useState(false)
 
