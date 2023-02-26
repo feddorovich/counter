@@ -26,7 +26,7 @@ const App: React.FC = () => {
 
     function resetCount() {
         setError(false)
-        setCounter(0)
+        setCounter(minValue)
     }
 
     function openSettings() {
